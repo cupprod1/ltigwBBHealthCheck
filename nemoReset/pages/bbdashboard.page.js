@@ -4,7 +4,7 @@ require("./../lib/logging.js");
 module.exports = {
     elements: {
         courseHyperlink: {
-            selector: '//div[contains(@id, "module:_3_1")]//a[text()="CQA Test Course 1 - Prod"]'
+            selector: '//div[contains(@id, "My_Courses_Tools")]//*[contains(@class, "courseListing")]//a'
         }
     },
 

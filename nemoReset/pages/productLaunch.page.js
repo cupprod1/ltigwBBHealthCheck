@@ -1,33 +1,35 @@
 module.exports = {
     elements: {
         content: {
-            selector: '//div[contains(@id, "content_wrap_0")]//div[contains(@class,"contentblock")]'
+            selector: '//div[contains(@class, "content-container")]'
         }
     },
     commands: [
         {
             isPageLaunched: function () {
+                var browser = this.api
                 var handle;
-                this.api.window_handles(function (result) {
+                browser.windowHandles(function (result) {
                     handle = result.value[1];
+                    browser.perform(function () {
+                        testlog.info("Switching Window")
+                    })
+                    browser.switchWindow(handle, function() {
+                        browser.perform(function () {
+                            testlog.info("Window is switched")
+                        })
+                    });
                 })
-                this.api.perform(function () {
-                    testlog.info("switching window")
-                })
-                this.api.switchWindow(handle);
-                this.api.perform(function () {
-                    testlog.info("window is switched")
-                })
-                this.api.perform(function () {
+                browser.perform(function () {
                     testlog.info("Waiting for Practice Extra to launch")
                 })
-                this.api.useXpath();
-                this.api.waitForElementVisible(this.elements.content.selector, 20000, "Practice Extra is  not launched");
-
-                this.api.useCss();
-                this.api.perform(function () {
+                browser.useXpath();
+                browser.waitForElementVisible(this.elements.content.selector, 120000, "Practice Extra is  not launched");
+                browser.useCss();
+                browser.perform(function () {
                     testlog.info("Practice extra is launched successfully")
                 })
+                // browser.pause(120000)
 
 
             }

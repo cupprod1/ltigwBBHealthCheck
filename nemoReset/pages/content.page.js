@@ -1,7 +1,7 @@
 module.exports = {
     elements: {
         practiceExtra: {
-            selector: '//ul[contains(@id, "content_listContainer")]//span[contains(text(),"Practice Extra")]'
+            selector: '//*[contains(@id, "content_listContainer")]//li[1]//div[1]//a[1]'
         }
     },
     commands: [
