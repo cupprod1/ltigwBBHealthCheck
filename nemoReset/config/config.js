@@ -7,7 +7,7 @@ module.exports = {
 
         },
         "student": {
-            "email": "bbprodstudent",
+            "email": "bbprodlearner1",
             "password": "Compro11"
         },
         // Page Completion Timeout
