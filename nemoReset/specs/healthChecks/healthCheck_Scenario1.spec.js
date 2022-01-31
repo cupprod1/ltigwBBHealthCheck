@@ -14,7 +14,7 @@ describe('LTIGW - Health Check Test', function () {
       .url(config[testEnv].loginUrl, function () {
         console.log("URL: " + config[testEnv].loginUrl + " launched successfully")
       })
-      .maximizeWindow(function () {
+      .resizeWindow(800, 600, function() {
         done();
       });
   });
