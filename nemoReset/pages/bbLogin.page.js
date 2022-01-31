@@ -32,6 +32,7 @@ module.exports = {
                 })
                 this.api.useXpath();
                 this.api.waitForElementVisible(this.elements.consentDialogOkButton.selector, 60000, "Consent Dialog is not appeared on BB login page");
+                this.api.pause(5000)
                 this.api.useCss();
                 this.api.perform(function () {
                     testlog.info("Consent Dialog is appeared successfully on BB login page")
@@ -60,11 +61,13 @@ module.exports = {
                     testlog.info("Entering login details")
                 })
                 this.api.useXpath();
+                this.api.pause(5000);
                 this.api.setValue(this.elements.username.selector, email);
                 this.api.setValue(this.elements.password.selector, password);
                 this.api.click(this.elements.loginButton.selector, function (result) {
                     this.assert.equal(result.status, 0, "Login Button is not clickable");
                 })
+                this.api.pause(5000)
                 this.api.useCss();
                 this.api.perform(function () {
                     testlog.info("Login Button is clicked successfully")

@@ -23,6 +23,7 @@ module.exports = {
                 browser.perform(function () {
                     testlog.info("Waiting for Practice Extra to launch")
                 })
+                browser.pause(20000)
                 browser.useXpath();
                 browser.waitForElementVisible(this.elements.content.selector, 120000, "Practice Extra is  not launched");
                 browser.useCss();

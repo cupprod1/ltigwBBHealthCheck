@@ -11,6 +11,7 @@ module.exports = {
                     testlog.info("Clicking on Practice Extra on Content Page")
                 })
                 this.api.useXpath();
+                this.api.pause(10000)
                 this.api.click(this.elements.practiceExtra.selector, function (result) {
                     this.assert.equal(result.status, 0, "Practice Extra is not clickable");
                 })
