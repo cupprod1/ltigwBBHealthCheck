@@ -2,12 +2,12 @@ module.exports = {
 
 
     "prod": {
-        "loginUrl": "https://blackboard.cambridgeone.org/",
+        "loginUrl": "https://bb-dev.cambridgeone.org/",
         "teacher": {
 
         },
         "student": {
-            "email": "testcqalearner1",
+            "email": "cqalearnerprod",
             "password": "Compro11"
         },
         // Page Completion Timeout

@@ -10,16 +10,12 @@ describe('LTIGW - Health Check Test', function () {
     productLaunchPage = browser.page['productLaunch.page']();
 
     console.log("Launching URL: " + config[testEnv].loginUrl)
-    browser
-      .url(config[testEnv].loginUrl, function () {
-        console.log("URL: " + config[testEnv].loginUrl + " launched successfully")
-      })
-      .resizeWindow(800, 600, function() {
-        done();
-      });
+    done();
   });
 
   it('Scenario 1 - Student launches activity using LTIGateway in Blackboard', function (browser) {
+    browser
+      .url(config[testEnv].loginUrl).resizeWindow(800, 600)
     loginPage.waitForConsentDialogToAppear();
     loginPage.clickConsentDialogOkButton();
     loginPage.login(config[testEnv].student.email, config[testEnv].student.password);
